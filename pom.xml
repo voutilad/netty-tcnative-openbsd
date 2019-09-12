@@ -439,6 +439,7 @@
       <activation>
         <os>
           <family>!windows</family>
+          <name>!openbsd</name>
         </os>
       </activation>
       <build>
@@ -592,12 +593,30 @@
         <property>
           <name>!moduleSelector</name>
         </property>
+        <os>
+          <name>!openbsd</name>
+        </os>
       </activation>
       <modules>
         <module>openssl-dynamic</module>
-        <module>openssl-static</module>
+	<module>openssl-static</module>
         <module>boringssl-static</module>
         <module>libressl-static</module>
+      </modules>
+    </profile>
+
+    <profile>
+      <id>openbsd</id>
+      <activation>
+        <property>
+          <name>!moduleSelector</name>
+        </property>
+        <os>
+          <name>openbsd</name>
+        </os>
+      </activation>
+      <modules>
+        <module>openssl-dynamic</module>
       </modules>
     </profile>
 
